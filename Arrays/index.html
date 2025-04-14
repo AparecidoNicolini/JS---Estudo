@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+
+    <script>
+        let carros = ['Audi', 'Ferrari', 'BMW', 'Mustange'];
+        // carros.push('fiat'); Adiciona ao array
+        // carros.pop(); remove o ultimo item do array,
+        // carros.shift(); remove o primeiro item do array
+
+        // troque ferrari por fiat
+
+        carros.splice(1,1, 'fiat');
+        // splice troca algum elemento especifico do array
+        // sintaxe: splica(numero do item, quantos devem ser removido e qual o novo valor)
+        console.log(carros);
+        console.log(carros.length);
+
+        carros.push('Volvo');
+        console.log(carros);
+        console.log(carros.length);
+
+
+
+        
+    </script>
+</body>
+
+</html>

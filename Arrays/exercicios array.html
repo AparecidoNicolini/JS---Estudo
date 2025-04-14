@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+
+    <script>
+        function somaArray(numeros) {
+            let soma = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+                soma += numeros[i];
+            }
+            return soma;
+        }
+
+        console.log(somaArray([1, 2, 3, 4])); // Saída esperada: 10
+
+        function filtrarPares(arr) {
+            let pares = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    pares.push(arr[i]);
+                }
+            }
+            return pares;
+        }
+
+        console.log(filtrarPares([1, 2, 3, 4, 5, 6])); // Saída esperada: [2, 4, 6]
+
+        function inverterArray(arr) {
+            let invertido = [];
+
+            for (let i = arr.length - 1; i >= 0; i--) {
+                invertido.push(arr[i]);
+            }
+            return invertido;
+        }
+
+        console.log(inverterArray([1, 2, 3])); // Saída esperada: [3, 2, 1]
+
+        function contarOcorrencias(arr, valor) {
+            let contador = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === valor) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+
+        console.log(contarOcorrencias(['a', 'b', 'a', 'c', 'a'], 'a')); // Saída esperada: 3
+
+    </script>
+</body>
+
+</html>
