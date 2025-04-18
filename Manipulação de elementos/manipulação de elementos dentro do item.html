@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Estudo de manipulação de dom</h1>
+    <div class="teste">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <button class="botao">Clique</button>
+    <script>
+        let texto = document.querySelector('.teste ul li');
+        let botao = document.querySelector('.botao');
+
+        botao.addEventListener("click", () => {
+            clicou();        
+            // a funcao append, adiciona um elemento ao ITEM EM QUESTÃO.
+            // texto.append(' Adicionado texto.');
+
+            // No inner HTML, ele substitui tudo, no append, ele só adiciona.
+            // O append, funciona apenas como texto, não reconhece HTML
+            // Para colocar elemento HTML, devemos utilizar o appendChild
+            // ou então se utilizarmos a estrutura abaixo, ele também funciona.
+            // Ele adiciona no final do elemento.
+
+            // let newH1 = document.createElement("h1");
+            //     newH1.innerText = "Texto H1 Adicionado";
+
+            // texto.appendChild(newH1);
+
+            // Para se adicionar no começo, devemos utilizar o prepend.
+            let newH1 = document.createElement("h1");
+                newH1.innerText = "Texto H1 Adicionado";
+
+            texto.prepend(newH1);
+
+            
+        });
+        function clicou() {
+            console.log('clicou')
+        }
+
+    </script>
+</body>
+
+</html>

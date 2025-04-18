@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Estudo de manipulação de dom</h1>
+    <div class="teste">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <button class="botao">Clique</button>
+    <script>
+
+        // Pode ser utilizado a funcao onclick="clicou(), ou podemos aplicar diretamente no js.
+
+        let botao = document.querySelector('.teste ul');
+        // botao.addEventListener("click", clicou);
+        // outros exemplos para este evento.
+        // Pode ser criado uma função para este evento de click.
+        botao.addEventListener("click", () => {
+            clicou();
+            // children, retorna os filhos imediatos do elemento.
+            // console.log(botao.children);
+            // quando colocamos += adicionamos o elemento ao texto exibido.
+            // innerHTML = envia como html, innerText = envia explicitamente como texto.
+            // outerHTML = leva em consideração todos os dados do ELEMENTO.
+            
+            botao.innerHTML += '<li>alteração concluida</li>';
+        });
+        // No modelo acima, estamos definindo o evento de click, não devemos chamar a funcao clicou();
+
+        function clicou() {
+            console.log('clicou')
+        }
+
+    </script>
+</body>
+
+</html>

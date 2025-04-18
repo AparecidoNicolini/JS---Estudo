@@ -10,6 +10,48 @@
 <body>
 
     <script>
+        let fruit = ['maça', 'banana', 'ameixa', 'morango', 'pera'];
+
+        // Every considera TODOS os elementos do array
+        let positionFruit = fruit.every((fruta) => {
+            return fruta.length > 3;
+        });
+
+        console.log(positionFruit);
+
+        // Para considerar algum, utilizar some.
+        let ok = fruit.some((fruta) => {
+            return fruta.length > 10
+        })
+
+        console.log (ok);
+
+        // Para verificar se algum valor especifico existe:
+
+        if(fruit.includes('banana')) {
+            console.log("A fruta existe na sua lista");
+        } else {
+            console.log("A fruta não existe");
+        }
+
+
+
+        
+
+        let resultFruit = fruit.filter((item) => {
+            return item.length > 5;
+
+            // if(item.length > 5) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        })
+
+        console.log(resultFruit);
+
+
+
         let carros = ['Audi', 'Ferrari', 'BMW', 'Mustange'];
         // carros.push('fiat'); Adiciona ao array
         // carros.pop(); remove o ultimo item do array,
@@ -17,7 +59,7 @@
 
         // troque ferrari por fiat
 
-        carros.splice(1,1, 'fiat');
+        carros.splice(1, 1, 'fiat');
         // splice troca algum elemento especifico do array
         // sintaxe: splica(numero do item, quantos devem ser removido e qual o novo valor)
         console.log(carros);
@@ -35,12 +77,12 @@
         // ordenação de arrays ordem alfabetica
         carros.sort();
         console.log(carros);
-        
+
         // ordenação inversa do array
         carros.reverse();
         console.log(carros);
 
-        
+
     </script>
 </body>
 
