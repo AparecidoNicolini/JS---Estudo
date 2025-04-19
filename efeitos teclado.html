@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Alterando atributos</h1>
+    <div class="teste">
+        <ul>
+            <li class="teste">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <!-- Esta forma, o evento de click está no htmk -->
+    <!-- <input type="text" name="teste" onkeydown="apertou()" onkeyup="soltou()" onkeypress="segurou()" placeholder="Digite seu e-mail " class="input" /> -->
+    <!-- Esta outra forma, será chamado diretamente via JS -->
+    <input type="text" name="teste" placeholder="Digite seu e-mail " class="input" />
+    <button class="botao">Clique</button>
+    <!-- Eventos com teclado -->
+    <script>
+        // comando via html
+        // function apertou() {
+        //     console.log('apertou...');
+        // }
+        // function segurou() {
+        //     console.log('segurou...');
+        // }
+        // function soltou() {
+        //     console.log('soltou...');
+        // }
+
+        // comando via JS
+
+        // let input = document.querySelector('input');
+        // No caso acima se for para fiscalizar o input;
+
+        // eventos de fiscalização keydown, keypress e keyup
+
+        // forma 1
+        // function apertou() {
+        //     console.log("apertou a tecla")
+        // }
+        // document.addEventListener('keydown' , apertou);
+
+        // forma 2
+        // document.addEventListener('keydown' , () => {
+        //     console.log("apertou na forma 2")
+        // });
+
+        // Para saber qual tecla o usuario apertou.
+
+        const input = document.querySelector('input');
+        document.addEventListener('keyup', soltou);
+
+        // e.code
+        // e.shiftKey (se estiver com o shift apertado (retorna true or false))
+        // e.crtlKey
+        // e.altKey
+
+        // Se passarmos algum parametro na função soltou, ele consegue retornar os detalhes da tecla.
+        function soltou(e) {
+            if (e.key === 'a') {
+                console.log('apertou o A');
+            } else {
+                console.log('Não apertou o A');
+            }
+            console.log(e['key']);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

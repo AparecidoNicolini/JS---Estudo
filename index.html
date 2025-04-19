@@ -8,36 +8,38 @@
 </head>
 
 <body>
-    <h1 class="titulo">Estudo de manipulação de dom</h1>
+    <h1 class="titulo">Criar lista</h1>
     <div class="teste">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+        <ul class="list">
+
         </ul>
     </div>
-    <button class="botao">Clique</button>
+    <input type="text" name="teste" placeholder="Digite a tarefa " class="input" />
+    <button class="botao">Adicionar item</button>
     <script>
-        let texto = document.querySelector('.teste ul li');
+        let ul = document.querySelector('.list');
         let botao = document.querySelector('.botao');
 
-        botao.addEventListener("click", () => {
-            clicou();        
-
-            let newBotao = document.createElement("button");
-                newBotao.innerText = "Botão adicionado.";
-
-
-            // texto.after('Adicionou depois');
-            texto.before(newBotao);
-
-            // After = Depois / Before = Antes 
-            
+        botao.addEventListener('click', () => {
+            let texto = document.querySelector('.input').value;
+            let li = document.createElement('li');
+            ul.appendChild(li);
+            li.append(texto);
+            document.querySelector('.input').value = ''
         });
-        function clicou() {
-            console.log('clicou')
+
+        document.addEventListener('keydown', apertou);
+        function apertou(e) {
+            if (e.key === 'Enter') {
+                let texto = document.querySelector('.input').value;
+                let li = document.createElement('li');
+                ul.appendChild(li);
+                li.append(texto);
+                document.querySelector('.input').value = ''
+            }
         }
 
+        console.log(ul);
     </script>
 </body>
 

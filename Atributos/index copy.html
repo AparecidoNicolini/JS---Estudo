@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Alterando atributos</h1>
+    <div class="teste">
+        <ul>
+            <li class="teste" style="background-color: red; color: white;">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <input type="text" name="teste" placeholder="Digite seu e-mail " class="input" />
+    <button class="botao">Clique</button>
+    <!-- manipulação de classes -->
+    <script>
+        let li = document.querySelector('li');
+        let botao = document.querySelector('.botao');
+
+        botao.addEventListener("click", () => {
+            // para exibir as classes...
+            // console.log(li.classList);
+            // Para adicionar, basta colocar .add
+            // li.classList.add('verde');
+            // console.log(li.classList);
+            // Para remover, basta colocar .remove
+            // li.classList.remove('verde')
+            // console.log(li.classList);
+
+            // Para substituir, basta colocar .replace
+            // li.classList.replace('teste', 'verde');
+            // console.log(li.classList);
+
+            // Para verificar se existe, utilizar contains
+            // if(li.classList.contains('verde')) {
+            //     li.classList.remove('verde');
+            //     li.classList.add('azul');
+            // } else {
+            //     li.classList.remove('azul');
+            //     li.classList.add('verde');
+            // }
+
+            // Para verificação em apenas 2 etapas, podemos utilizar o toggle.
+            // Se não tiver, ele adiciona, se tiver, ele remove.
+            // li.classList.toggle('azul');
+            console.log(li.classList);      
+            
+            
+        });
+    </script>
+</body>
+
+</html>

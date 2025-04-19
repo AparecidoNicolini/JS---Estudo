@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Alterando atributos</h1>
+    <div class="teste">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <input type="text" name="teste" placeholder="Digite seu e-mail " class="input" style="background-color: red; color: white;" />
+    <button class="botao">Clique</button>
+    <script>
+        let input = document.querySelector('.input');
+        let botao = document.querySelector('.botao');
+
+        botao.addEventListener("click", () => {
+            // getAttribute, serve para retornar o valor do atributo.
+            console.log(input.getAttribute('type'));
+
+            // Para saber se existe o atributo.
+
+            if (input.hasAttribute('name')) {
+                console.log("existe o atributo.")
+            } else {
+                console.log("não existe o atributo.");
+            }
+
+            // Para trocar/adicionar um atributo.
+            // primeiro informa qual o atributo e o segundo o valor
+            input.setAttribute('placeholder', 'Deu certo a troca');
+            // Neste caso, pode ser utilizado por ex. com a função de mostrar senha.
+            // Seria apenas alterar o type de password para text e vice versa.
+
+            // Para se alterar uma propriedade do tipo css inline
+            input.style.backgroundColor = 'black';
+            // Para adicionar, basta informar a propriedade depois do style.
+
+        });
+
+    </script>
+</body>
+
+</html>
