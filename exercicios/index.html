@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 1</title>
+</head>
+
+<body>
+
+    <h1>1 - O total da soma é: <span class="result1"></span></h1>
+    <input placeholder="Digite um numero" type="text" class="n1">
+    <input placeholder="Digite um numero" type="text" class="n2">
+    <button class="botao1">Somar numeros</button> <br><br><br>
+    <h1>2 - Contador de clicks <span class="result2"></span></h1>
+    <button class="botao2">Contador de clicks</button>
+    <h1>3 - Verificação se é par ou impar: O numero é: <span class="result3"></span></h1>
+    <input class="verNumero" type="text">
+    <button class="botao3">Contador de clicks</button>
+    <br><br><br>
+    <h1>4 - Texto digitado: <span class="result4"></span></h1>
+    <input type="text" class="text4">
+    <br><br><br>
+
+
+    <script>
+
+        // Exercicio 4
+        document.addEventListener('keyup', () => {
+            let text4 = document.querySelector('.text4').value;
+            console.log(text4);
+            document.querySelector('.result4').innerHTML = text4;
+        })
+
+        // Exercicio 3
+        let botao3 = document.querySelector('.botao3');
+        botao3.addEventListener('click', () => {
+            let verNumero = parseInt(document.querySelector('.verNumero').value);
+            document.querySelector('.result3').innerHTML = '';
+            if (verNumero % 2 == 0 && verNumero !== 0) {
+                document.querySelector('.result3').innerHTML = 'par';
+            } else {
+                document.querySelector('.result3').innerHTML = 'impar';
+            }
+        })
+
+
+        // exercicio 2
+        let botao2 = document.querySelector('.botao2');
+        let click = 0;
+        botao2.addEventListener('click', () => {
+            let result2 = document.querySelector('.result2');
+            click++;
+            document.querySelector('.result2').innerHTML = '';
+            result2.append(click);
+        })
+
+        // Exercicio 1
+
+        let botao1 = document.querySelector('.botao1');
+        botao1.addEventListener('click', () => {
+            if (document.querySelector('.result1') !== '') {
+                document.querySelector('.result1').innerHTML = '';
+            }
+            let n1 = parseInt(document.querySelector('.n1').value);
+            let n2 = parseInt(document.querySelector('.n2').value);
+            let result = document.querySelector('.result1');
+            let resultado = n1 + n2;
+            console.log(n1);
+            console.log('O resultado é ' + resultado);
+            result.append(resultado);
+            document.querySelector('.n1').value = '';
+            document.querySelector('.n2').value = ''
+        })
+
+
+    </script>
+</body>
+
+</html>
