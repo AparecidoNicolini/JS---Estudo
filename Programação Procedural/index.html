@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - 4</title>
+</head>
+
+<body>
+    <h1 class="titulo">Criar lista</h1>
+    <div class="teste">
+        <ul class="list">
+
+        </ul>
+    </div>
+    <input type="text" name="teste" placeholder="Digite a tarefa " class="input" />
+    <button class="botao">Adicionar item</button>
+    <script>
+        let ul = document.querySelector('.list');
+        let botao = document.querySelector('.botao');
+
+        botao.addEventListener('click', () => {
+            let texto = document.querySelector('.input').value;
+            let li = document.createElement('li');
+            ul.appendChild(li);
+            li.append(texto);
+            document.querySelector('.input').value = ''
+        });
+
+        document.addEventListener('keydown', apertou);
+        function apertou(e) {
+            if (e.key === 'Enter') {
+                let texto = document.querySelector('.input').value;
+                let li = document.createElement('li');
+                ul.appendChild(li);
+                li.append(texto);
+                document.querySelector('.input').value = ''
+            }
+        }
+
+        console.log(ul);
+    </script>
+</body>
+
+</html>
